@@ -1,31 +1,36 @@
-import { StyleSheet } from 'react-native';
+// app/(tabs)/two.tsx
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import DreamForm from '@/components/DreamForm';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
-
-export default function TabTwoScreen() {
+export default function DreamFormScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/two.tsx" />
-    </View>
+      <ScrollView style={styles.container}>
+        <Text style={styles.title}>Ajouter un Rêve</Text>
+        <Text style={styles.description}>
+          Remplissez le formulaire ci-dessous pour enregistrer un rêve et suivre son évolution.
+        </Text>
+        <DreamForm />
+      </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#121212',
+    padding: 16,
   },
   title: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: 'bold',
+    color: '#BB86FC',
+    textAlign: 'center',
+    marginBottom: 10,
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  description: {
+    fontSize: 16,
+    color: 'white',
+    textAlign: 'center',
+    marginBottom: 20,
   },
 });
